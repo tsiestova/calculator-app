@@ -1,0 +1,12 @@
+@use "../styles/abstracts";
+@use "../styles/abstracts/functions" as media;
+
+.layout {
+  padding: 0 32px;
+
+  @include media.desktop {
+    display: flex;
+    padding-left: 45px;
+    gap: 48px;
+  }
+}

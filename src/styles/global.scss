@@ -1,19 +1,16 @@
 @use "./abstracts";
 @use "../styles/abstracts/functions" as media;
+@use "../styles/abstracts/var" as var;
 
 body {
   font-family: abstracts.$font;
-  background: abstracts.$bg-color;
+  background: abstracts.$bg;
 }
 
-.card__wrap {
-  background: abstracts.$bg-color url("../../public/img/bg-intro-mobile.png");
-  min-height: 100%;
+input {
+  font-family: abstracts.$font;
+}
 
-  @include media.tablet {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.root__container {
+  height: 100%;
 }
