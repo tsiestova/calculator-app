@@ -92,6 +92,10 @@ input {
   height: 48px;
   position: relative;
 
+  &.error {
+    border: 1px solid #e17457;
+  }
+
   input {
     color: #00474b;
     font-family: "Space Mono";
@@ -127,6 +131,10 @@ input {
   }
 
   .input__user_wrap {
+    &.active {
+      border: 2px solid #26c2ae;
+    }
+
     &:before {
       background: url(../img/icon-dollar.svg) no-repeat;
     }
@@ -135,6 +143,25 @@ input {
 
 .people__container {
   margin-bottom: 32px;
+  position: relative;
+
+  .error__massage {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #e17457;
+    position: absolute;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+  }
+
+  &.error {
+    .error__massage {
+      visibility: visible;
+    }
+  }
 
   @include media.desktop {
     margin-bottom: 17px;
@@ -142,7 +169,7 @@ input {
 
   label {
     margin-bottom: 6px;
-    display: block;
+    display: inline-block;
   }
 
   .input__user_wrap {
@@ -191,27 +218,73 @@ input {
   }
 }
 
-.btn__tips {
+.btn__tips__wrap {
   height: 48px;
-  background: #00474b;
-  border-radius: 5px;
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked + label {
+      background: #26c2ae;
+      color: #00474b;
+
+      &:after {
+        color: #00474b;
+      }
+    }
+  }
+
+  input {
+    color: #00474b;
+  }
+}
+
+.btn__tips {
   color: #ffffff;
   font-weight: 700;
   font-size: 24px;
   line-height: 48px;
-  font-family: "Space Mono";
+  width: 100%;
+  height: 100%;
+  background: #00474b;
+  border-radius: 5px;
+  text-align: center;
 
-  &:hover {
-    background: #26c2ae;
-    color: #00474b;
-    cursor: pointer;
+  &:after {
+    content: "%";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    color: #ffffff;
+    display: inline-block;
   }
+}
+
+.tip__number {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  display: inline-block;
+}
+
+.tip__percent {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  display: inline-block;
+  margin-left: 40px;
 }
 
 .total__container {
   background: #00474b;
   border-radius: 15px;
-  padding: 37px 14px 24px 17px;
+  padding: 37px 7px 24px 17px;
 
   @include media.desktop {
     flex: 0.9;
@@ -222,10 +295,10 @@ input {
     font-size: 16px;
     line-height: 24px;
     color: #ffffff;
-    flex: 1.9;
+    flex: 1.1;
 
     @include media.desktop {
-      flex: 1.2;
+      flex: 0.9;
     }
   }
 
@@ -273,6 +346,22 @@ input {
       font-size: 48px;
       line-height: 71px;
     }
+
+    &::-webkit-input-placeholder {
+      color: #26c2ae;
+    }
+
+    &::-moz-placeholder {
+      color: #26c2ae;
+    }
+
+    &:-ms-input-placeholder {
+      color: #26c2ae;
+    }
+
+    &:-moz-placeholder {
+      color: #26c2ae;
+    }
   }
 
   &:before {
@@ -300,7 +389,7 @@ input {
   text-transform: uppercase;
   height: 48px;
   width: 100%;
-  background: #0d686d;
+  background: #26c2ae;
   color: #00474b;
 
   @include media.desktop {
@@ -309,10 +398,13 @@ input {
     display: block;
   }
 
-  &:hover {
-    cursor: pointer;
+  &:disabled {
     background: #26c2ae;
     color: #00474b;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
