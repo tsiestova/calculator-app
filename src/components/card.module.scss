@@ -1,9 +1,5 @@
 @use "../styles/abstracts/functions" as media;
 
-//.card_page__wrap {
-//  padding-bottom: 32px;
-//}
-
 .card__inner__box {
   @include media.tablet {
     padding: 0 20px;
@@ -399,12 +395,15 @@ input {
   }
 
   &:disabled {
-    background: #26c2ae;
+    //background: #26c2ae;
+    //color: #00474b;
+    background: #0d686d;
     color: #00474b;
   }
 
   &:hover {
     cursor: pointer;
+    background: #9fe8df;
   }
 }
 

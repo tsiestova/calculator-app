@@ -15,6 +15,7 @@ const Card = () => {
     },
 
     tip: "",
+    custom: "",
   };
 
   const [userData, setUserData] = useState(initialState);
@@ -69,11 +70,13 @@ const Card = () => {
       setUserData((data) => ({
         ...data,
         tip: e.target.value,
+        custom: e.target.value,
       }));
     } else {
       setUserData((data) => ({
         ...data,
         tip: e.target.value,
+        custom: "",
       }));
     }
   };
@@ -119,7 +122,12 @@ const Card = () => {
                 <label>Select Tip %</label>
 
                 <div className={cardStyle.tips__list}>
-                  <InputTip tip="5" handleDataTip={handleDataTip} />
+                  <InputTip
+                    tip="5"
+                    handleDataTip={handleDataTip}
+                    customTip={userData.custom.length}
+                    currentTip={userData.tip}
+                  />
 
                   <div className={cardStyle.btn__tips__wrap}>
                     <input
@@ -127,6 +135,11 @@ const Card = () => {
                       name="tips"
                       value="10"
                       id="tip2"
+                      checked={
+                        !userData.custom.length && userData.tip === "10"
+                          ? true
+                          : false
+                      }
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip2" className={cardStyle.btn__tips}>
@@ -139,6 +152,11 @@ const Card = () => {
                       name="tips"
                       value="15"
                       id="tip3"
+                      checked={
+                        !userData.custom.length && userData.tip === "15"
+                          ? true
+                          : false
+                      }
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip3" className={cardStyle.btn__tips}>
@@ -146,7 +164,18 @@ const Card = () => {
                     </label>
                   </div>
                   <div className={cardStyle.btn__tips__wrap}>
-                    <input type="radio" name="tips" value="25" id="tip4" />
+                    <input
+                      type="radio"
+                      name="tips"
+                      value="25"
+                      id="tip4"
+                      checked={
+                        !userData.custom.length && userData.tip === "25"
+                          ? true
+                          : false
+                      }
+                      onClick={(e) => handleDataTip(e)}
+                    />
                     <label htmlFor="tip4" className={cardStyle.btn__tips}>
                       25
                     </label>
@@ -157,6 +186,11 @@ const Card = () => {
                       name="tips"
                       value="50"
                       id="tip5"
+                      checked={
+                        !userData.custom.length && userData.tip === "50"
+                          ? true
+                          : false
+                      }
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip5" className={cardStyle.btn__tips}>
@@ -169,7 +203,7 @@ const Card = () => {
                     <input
                       type="text"
                       name="custom"
-                      // value={userData.customTip}
+                      value={userData.custom}
                       placeholder="Custom"
                       onChange={(e) => handleDataTip(e)}
                     />
@@ -250,7 +284,7 @@ const Card = () => {
                 disabled={
                   !userData.bill.value ||
                   !userData.people.value ||
-                  !userData.tip
+                  !(userData.tip || userData.custom)
                 }
                 onClick={handleReset}
               >
