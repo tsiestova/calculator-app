@@ -10,7 +10,7 @@ const InputTip = ({ tip, handleDataTip, customTip, currentTip }) => {
         id="tip1"
         value="5"
         onClick={(e) => handleDataTip(e)}
-        checked={!customTip && currentTip === tip ? true : false}
+        checked={!customTip && currentTip === tip}
       />
       <label htmlFor="tip1" className={cardStyle.btn__tips}>
         {tip}

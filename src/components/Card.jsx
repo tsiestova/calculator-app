@@ -135,11 +135,7 @@ const Card = () => {
                       name="tips"
                       value="10"
                       id="tip2"
-                      checked={
-                        !userData.custom.length && userData.tip === "10"
-                          ? true
-                          : false
-                      }
+                      checked={!userData.custom.length && userData.tip === "10"}
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip2" className={cardStyle.btn__tips}>
@@ -152,11 +148,7 @@ const Card = () => {
                       name="tips"
                       value="15"
                       id="tip3"
-                      checked={
-                        !userData.custom.length && userData.tip === "15"
-                          ? true
-                          : false
-                      }
+                      checked={!userData.custom.length && userData.tip === "15"}
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip3" className={cardStyle.btn__tips}>
@@ -169,11 +161,7 @@ const Card = () => {
                       name="tips"
                       value="25"
                       id="tip4"
-                      checked={
-                        !userData.custom.length && userData.tip === "25"
-                          ? true
-                          : false
-                      }
+                      checked={!userData.custom.length && userData.tip === "25"}
                       onClick={(e) => handleDataTip(e)}
                     />
                     <label htmlFor="tip4" className={cardStyle.btn__tips}>
