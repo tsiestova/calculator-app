@@ -1,0 +1,148 @@
+@use "./src/styles/abstracts/functions" as media;
+
+.total__container__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include media.desktop {
+    margin-bottom: 23px;
+  }
+}
+
+.input__total_amount_wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    @include media.desktop {
+      font-size: 48px;
+      line-height: 71px;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #26c2ae;
+    }
+
+    &::-moz-placeholder {
+      color: #26c2ae;
+    }
+
+    &:-ms-input-placeholder {
+      color: #26c2ae;
+    }
+
+    &:-moz-placeholder {
+      color: #26c2ae;
+    }
+  }
+
+  &:before {
+    content: "$";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    text-align: right;
+    letter-spacing: -0.666667px;
+    color: #26c2ae;
+
+    @include media.desktop {
+      font-size: 48px;
+      line-height: 71px;
+    }
+  }
+}
+
+.total__container {
+  background: #00474b;
+  border-radius: 15px;
+  padding: 37px 7px 24px 17px;
+
+  @include media.desktop {
+    flex: 0.9;
+  }
+
+  input {
+    font-family: "Space Mono";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+    letter-spacing: -0.666667px;
+    color: #26c2ae;
+    padding: 0;
+    text-align: left;
+  }
+
+  span {
+    display: block;
+    font-size: 13px;
+    line-height: 19px;
+    color: #7f9d9f;
+  }
+}
+
+.total__container__list {
+  margin-bottom: 32px;
+
+  @include media.desktop {
+    padding-left: 24px;
+    padding-top: 5px;
+    margin-bottom: 122px;
+  }
+}
+
+.label__tip_amount {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  flex: 1.1;
+
+  @include media.desktop {
+    flex: 0.9;
+  }
+}
+
+.btn__reset {
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  height: 48px;
+  width: 100%;
+  background: #26c2ae;
+  color: #00474b;
+  max-width: 333px;
+  margin: auto;
+  display: block;
+
+  @include media.desktop {
+    max-width: 333px;
+    margin: auto;
+    display: block;
+  }
+
+  &:disabled {
+    background: #0d686d;
+    color: #00474b;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: #9fe8df;
+  }
+}
+
+.input__total_amount {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 47px;
+  text-align: right;
+  letter-spacing: -0.666667px;
+  color: #26c2ae;
+}

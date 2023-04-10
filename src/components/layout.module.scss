@@ -10,3 +10,16 @@
     gap: 48px;
   }
 }
+
+.page__wrap {
+  background: #c5e4e7;
+  min-height: 100%;
+
+  @include media.desktop {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
