@@ -2,8 +2,6 @@ import React from "react";
 import totalContainerStyles from "./total.module.scss";
 
 const TotalItem = ({ label, value }) => {
-  console.log(value, "value");
-
   return (
     <div className={totalContainerStyles.total__container__item}>
       <div className={totalContainerStyles.label__tip_amount}>
