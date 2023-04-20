@@ -1,13 +1,7 @@
 @use "./src/styles/abstracts/functions" as media;
 
 .input__field__container {
-  //margin-bottom: 32px;
   position: relative;
-
-  @include media.desktop {
-    padding-top: 14px;
-    //margin-bottom: 40px;
-  }
 
   .input__field_wrap {
     border: 2px solid transparent;
@@ -19,13 +13,10 @@
 
     &.input__field__error {
       border: 2px solid red;
+
       .error__massage {
         visibility: visible;
       }
-    }
-
-    &:before {
-      /*background: url(../img/icon-dollar.svg) no-repeat;*/
     }
   }
 }
@@ -34,25 +25,6 @@
   margin-bottom: 6px;
   display: block;
 }
-
-//.input__user_wrap {
-//  position: relative;
-//
-//  &.error {
-//    border: 1px solid #e17457;
-//  }
-//
-//  &:before {
-//    content: "";
-//    width: 15px;
-//    height: 16px;
-//    position: absolute;
-//    left: 20px;
-//    top: 0;
-//    bottom: 0;
-//    margin: auto;
-//  }
-//}
 
 .input__field {
   color: #00474b;
@@ -75,7 +47,6 @@
   position: absolute;
   right: 0;
   top: 0;
-  //visibility: hidden;
 }
 
 .input__field__img {
