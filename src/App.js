@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { DataContext } from "./components/UserContext";
 import layoutStyles from "./components/layout.module.scss";
 import Logo from "./components/logo/Logo";
@@ -6,14 +6,14 @@ import Card from "./components/Card";
 
 const initialState = {
   bill: {
-    value: "",
+    value: null,
   },
   people: {
-    value: "",
+    value: null,
   },
 
-  tip: "",
-  customTip: "",
+  tip: null,
+  customTip: null,
 };
 
 function App() {

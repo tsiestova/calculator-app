@@ -29,7 +29,7 @@ const TotalComponent = ({ reset, disabled }) => {
       <button
         type="button"
         className={totalContainerStyles.btn__reset}
-        onClick={() => reset()}
+        onClick={reset}
         disabled={disabled}
       >
         Reset

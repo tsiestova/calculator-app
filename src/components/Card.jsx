@@ -1,4 +1,4 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useContext, useCallback, useEffect } from "react";
 import layout from "./layout.module.scss";
 import cardStyle from "./card.module.scss";
 import Switcher from "./switcher/Switcher";
@@ -24,7 +24,7 @@ const Card = () => {
     setUserData((data) => ({
       ...data,
       tip: value,
-      customTip: "",
+      customTip: null,
     }));
   };
 
@@ -52,6 +52,7 @@ const Card = () => {
               value={userData.bill.value}
               placeholder="0.00"
               onChange={getUserData}
+              min="1"
               validationMassage={
                 <div className={inputFieldStyles.error__massage}>
                   Can’t be zero
@@ -124,6 +125,8 @@ const Card = () => {
                     value={userData.customTip}
                     placeholder="Custom"
                     onChange={handleCustomTip}
+                    tip={userData.tip}
+                    min="1"
                   />
                 </div>
               </div>
@@ -136,6 +139,7 @@ const Card = () => {
               value={userData.people.value}
               placeholder="0"
               onChange={getUserData}
+              min="1"
               validationMassage={
                 <div className={inputFieldStyles.error__massage}>
                   Can’t be zero
