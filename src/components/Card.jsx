@@ -161,6 +161,7 @@ const Card = () => {
               parseInt(userData.bill.value) === 0 ||
               !userData.people.value ||
               !userData.tip ||
+              parseInt(userData.tip) === 0 ||
               parseInt(userData.people.value) === 0
             }
           />

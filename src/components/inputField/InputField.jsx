@@ -67,6 +67,7 @@ const InputField = ({
               value: e.target.value,
               isValid: e.target.validity.valid,
             });
+
             onChange(e);
           }}
           onFocus={handleFocus}

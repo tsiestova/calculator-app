@@ -9,9 +9,7 @@ const TotalItem = ({ label, value }) => {
         <span>/ person</span>
       </div>
       <div className={totalContainerStyles.input__total_amount_wrap}>
-        <div className={totalContainerStyles.input__total_amount}>
-          {isNaN(value) ? "0,00" : value}
-        </div>
+        <div className={totalContainerStyles.input__total_amount}>{value}</div>
       </div>
     </div>
   );
